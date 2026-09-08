@@ -1,0 +1,28 @@
+Data Structures - Unit Notes
+
+A stack is a linear data structure that follows the Last In First Out (LIFO) principle.
+The main operations on a stack are push (insert an element), pop (remove the top element),
+and peek (view the top element without removing it). Stacks are used in function call
+management, expression evaluation, undo operations in editors, and backtracking algorithms.
+
+A queue is a linear data structure that follows the First In First Out (FIFO) principle.
+The main operations are enqueue (insert at the rear) and dequeue (remove from the front).
+Queues are used in scheduling, handling requests in web servers, and breadth-first search.
+
+A linked list is a collection of nodes where each node contains data and a reference
+(pointer) to the next node. Unlike arrays, linked lists do not require contiguous memory
+and can grow or shrink dynamically. Types include singly linked lists, doubly linked lists,
+and circular linked lists.
+
+A binary search tree (BST) is a tree data structure in which each node has at most two
+children, and for every node, the left subtree contains values smaller than the node and
+the right subtree contains values greater. BSTs support efficient search, insertion, and
+deletion, typically in O(log n) time when balanced.
+
+Graphs consist of vertices (nodes) and edges (connections between nodes). Graphs can be
+directed or undirected, weighted or unweighted. Common graph traversal algorithms include
+Breadth-First Search (BFS) and Depth-First Search (DFS).
+
+Time complexity describes how the runtime of an algorithm grows relative to the size of
+its input. Common complexity classes, from fastest to slowest growth, include O(1), O(log n),
+O(n), O(n log n), O(n^2), and O(2^n).

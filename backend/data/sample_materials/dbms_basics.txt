@@ -1,0 +1,23 @@
+Database Management Systems - Unit Notes
+
+Normalization is the process of organizing data in a database to reduce redundancy and
+improve data integrity. The common normal forms are First Normal Form (1NF), Second Normal
+Form (2NF), Third Normal Form (3NF), and Boyce-Codd Normal Form (BCNF).
+
+A primary key is a column or set of columns that uniquely identifies each row in a table.
+A foreign key is a column that creates a link between two tables by referencing the
+primary key of another table.
+
+A transaction in a database must satisfy the ACID properties: Atomicity, Consistency,
+Isolation, and Durability. Atomicity ensures a transaction is all-or-nothing. Consistency
+ensures the database moves from one valid state to another. Isolation ensures concurrent
+transactions do not interfere with each other. Durability ensures committed changes survive
+system failures.
+
+SQL joins combine rows from two or more tables based on a related column. Common types are
+INNER JOIN (matching rows only), LEFT JOIN (all rows from the left table plus matches),
+RIGHT JOIN (all rows from the right table plus matches), and FULL OUTER JOIN (all rows
+from both tables).
+
+Indexing improves the speed of data retrieval operations on a database table at the cost
+of additional storage and slower write operations. A common index structure is the B-tree.
