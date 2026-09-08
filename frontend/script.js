@@ -2,7 +2,9 @@
  * StudyDesk PRO — Client Logic & State Manager
  */
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = (window.location.origin && window.location.origin.startsWith("http")) 
+  ? window.location.origin 
+  : "http://localhost:8000";
 let SESSION_ID = "session-" + Math.random().toString(36).slice(2, 10);
 let currentMode = "general";
 let chatHistory = []; // stores all messages for export

@@ -27,6 +27,8 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 # pyrefly: ignore [missing-import]
 from fastapi.middleware.cors import CORSMiddleware
 # pyrefly: ignore [missing-import]
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from rag_engine import RAGEngine
@@ -36,6 +38,7 @@ import tools
 
 MATERIALS_DIR = os.path.join(os.path.dirname(__file__), "data", "sample_materials")
 os.makedirs(MATERIALS_DIR, exist_ok=True)
+FRONTEND_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend"))
 
 app = FastAPI(title="AI Learning & Study Assistant Pro", version="2.0")
 
@@ -49,6 +52,21 @@ app.add_middleware(
 
 rag = RAGEngine(MATERIALS_DIR)
 memory = MemoryStore()
+
+# Serve Frontend on Root URL
+if os.path.exists(FRONTEND_DIR):
+    @app.get("/")
+    def serve_index():
+        return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
+
+    @app.get("/style.css")
+    def serve_css():
+        return FileResponse(os.path.join(FRONTEND_DIR, "style.css"), media_type="text/css")
+
+    @app.get("/script.js")
+    def serve_js():
+        return FileResponse(os.path.join(FRONTEND_DIR, "script.js"), media_type="application/javascript")
+
 
 
 class ChatRequest(BaseModel):
